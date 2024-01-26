@@ -1,4 +1,4 @@
-import { FaPlus, FaShoppingBag} from "react-icons/fa";
+import {FaShoppingBag} from "react-icons/fa";
 
 type ProductsProps = {
   productId: string;

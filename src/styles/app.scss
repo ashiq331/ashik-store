@@ -11,11 +11,17 @@
 }
 
 $color1: white;
-$color2: rgb(46, 46, 46);
-$color3: rgb(0, 104, 136);
+$color2: rgb(19, 19, 19);
+$color3: rgb(13, 142, 255);
 
 body {
   user-select: none;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  overflow-x: hidden !important;
 }
 
 a {
@@ -36,6 +42,8 @@ a {
 @import "admin-styles/mixin";
 
 @import "home";
+@import "cart";
+@import "shipping";
 
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
@@ -45,12 +53,45 @@ a {
 
 // Frontend Design Start
 .header {
-  @include flex(row, flex-end, stretch, 1.2rem);
-  padding: 1rem;
+  position: fixed;
+  max-width: 1480px;
+  top: 3rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 9999;
+  > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: $color2;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+
+  > div .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    &:hover {
+      color: white;
+    }
+  }
+
+  > .container .header__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
   a {
-    color: $color2;
+    color: white;
     letter-spacing: 2px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
     &:hover {
       color: $color3;
@@ -59,7 +100,8 @@ a {
 
   button {
     border: none;
-    font-size: 1.2rem;
+    color: #ffffff;
+    font-size: 1.4rem;
     cursor: pointer;
     background-color: transparent;
     &:hover {
@@ -69,12 +111,19 @@ a {
 
   dialog {
     border: 1px solid #ccc;
+    background-color: #000;
     border-radius: 5px;
     padding: 10px;
-    width: 100px;
+    width: 150px;
     position: absolute;
-    left: calc(100% - 100px);
-    top: 8%;
+    left: calc(100% - 150px);
+    top: 5.5rem;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
   }
 }
 

@@ -1,21 +1,17 @@
 .home {
-  padding: 2rem 5%;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 4rem);
-  width: 100%;
-
-  > section {
-    height: 18.76rem;
-    width: 100%;
-    margin: auto;
-    background-image: url("https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  > .container section {
+    height: 30.76rem;
+    opacity: 1;
+    border-radius: 15px;
+    background-image: url("https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
 
-  > h1 {
+  > .container h1 {
     @include heading(1px);
     margin-top: 3rem;
     @include flex(row, space-between, center);
@@ -26,12 +22,12 @@
     font-size: 1rem;
   }
 
-  > main {
+  > .container main {
     width: 100%;
-    flex: 1;
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 3rem 1.7rem;
   }
   &::-webkit-scrollbar {
     display: none;
@@ -39,19 +35,18 @@
 }
 
 .product_card {
-  width: 18.75rem;
+  min-width: 20rem;
   height: 25rem;
   padding: 0rem;
-  border: 1px solid #ccc;
-  flex: none;
+  border: 1px solid #cccccc86;
   border-radius: 7px;
   @include flex(column, flex-start, center, 4px);
   position: relative;
   background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   transition: all 0.3s ease;
 
-  &:hover > div 
-  {
+  &:hover > div {
     opacity: 1;
   }
 
@@ -63,8 +58,8 @@
     margin-bottom: 1rem;
   }
 
-  p{
-    font-size: 1.5rem;
+  p {
+    font-size: 1.2rem;
     font-weight: 400;
     width: 90%;
     margin: 0 auto;
@@ -72,11 +67,10 @@
     text-align: start;
   }
 
-  span{
+  span {
     font-weight: 700;
     font-size: 1.1rem;
     width: 90%;
-    
   }
 
   > div {
@@ -89,7 +83,7 @@
     @include flex;
     transition: all 0.3s ease;
 
-    button{
+    button {
       @include flex;
       @include square;
       border-radius: 100%;
@@ -102,11 +96,9 @@
       font-size: 1.2rem;
       transition: all 0.3s ease;
       cursor: pointer;
-      &:hover{
+      &:hover {
         rotate: 20deg;
       }
-
     }
   }
-
 }
