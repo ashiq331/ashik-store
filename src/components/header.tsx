@@ -18,8 +18,8 @@ const Header = () => {
   };
 
   return (
-    <nav className="header">
-      <div className="container">
+    <div className="container">
+      <nav className="header">
         <div>
           <Link className="logo" onClick={() => setIsOpen(false)} to={"/"}>
             Ashik Store
@@ -54,10 +54,14 @@ const Header = () => {
                     </Link>
                   )}
 
-                  <Link onClick={() => setIsOpen(false)} to="/orders">
+                  <Link onClick={() => setIsOpen(false)} to="/">
                     <button onClick={logoutHandler}>
                       <FaSignOutAlt />
                     </button>
+                  </Link>
+
+                  <Link to={"/login"}>
+                    <FaSignInAlt />
                   </Link>
                 </div>
               </dialog>
@@ -68,8 +72,8 @@ const Header = () => {
             </Link>
           )}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

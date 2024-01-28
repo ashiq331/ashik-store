@@ -24,8 +24,7 @@
 
   > .container main {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
     flex-wrap: wrap;
     gap: 3rem 1.7rem;
   }
@@ -35,7 +34,7 @@
 }
 
 .product_card {
-  min-width: 20rem;
+  min-width: 23.5%;
   height: 25rem;
   padding: 0rem;
   border: 1px solid #cccccc86;

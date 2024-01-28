@@ -11,11 +11,12 @@
 }
 
 $color1: white;
-$color2: rgb(19, 19, 19);
+$color2: rgb(12, 12, 12);
 $color3: rgb(13, 142, 255);
 
 body {
   user-select: none;
+  color: #000;
 }
 
 .container {
@@ -44,6 +45,8 @@ a {
 @import "home";
 @import "cart";
 @import "shipping";
+@import "login";
+@import "search";
 
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
@@ -55,22 +58,18 @@ a {
 .header {
   position: fixed;
   max-width: 1480px;
+  background-color: $color2;
+  padding: 1rem;
+  border-radius: 15px;
   top: 3rem;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 9999;
-  > .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 36px;
-    width: 100%;
-    border-radius: 15px;
-    background-color: $color2;
-    padding: 1rem 2rem;
-    position: relative;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 
   > div .logo {
     font-size: 2rem;
@@ -81,7 +80,7 @@ a {
     }
   }
 
-  > .container .header__left {
+  > .header__left {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,21 +109,28 @@ a {
   }
 
   dialog {
+    position: absolute;
+    top: 5.5rem;
+    left: calc(100% - 8rem);
     border: 1px solid #ccc;
     background-color: #000;
-    border-radius: 5px;
-    padding: 10px;
-    width: 150px;
-    position: absolute;
-    left: calc(100% - 150px);
-    top: 5.5rem;
-
+    border-radius: 15px;
+    width: 130px;
+    padding: 5px 15px;
+    z-index: 99999;
+    transition: all 0.5s ease;
     > div {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
   }
+}
+
+.heading{
+  @include heading;
+  margin: 1rem 0;
+  text-align: center
 }
 
 // Admin Pannel Style
